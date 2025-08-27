@@ -1,13 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
-import { db } from "@/firebaseConfig"; // আপনার path ঠিক করুন
-import {
-  collection,
-  addDoc,
-  query,
-  where,
-  getDocs,
-} from "firebase/firestore";
+import { db } from "@/firebaseConfig"; // path ঠিক করুন
+import { collection, doc, setDoc, getDoc } from "firebase/firestore";
 
 interface Choice {
   choice_number: number;
@@ -44,7 +38,7 @@ export default function SearchCard() {
     setAdminMode(false);
   };
 
-  // 🔹 CSV Upload → Firestore এ Save
+  // 🔹 CSV Upload → Firestore
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -53,48 +47,46 @@ export default function SearchCard() {
     reader.onload = async (e) => {
       try {
         const content = e.target?.result as string;
-        if (file.name.endsWith(".csv")) {
-          const lines = content.split("\n");
-          let count = 0;
+        if (!file.name.endsWith(".csv")) {
+          alert("Only CSV files are supported");
+          return;
+        }
 
-          for (const line of lines) {
-            if (!line.trim()) continue;
-            const values = line.split(",").map((v) => v.trim());
+        const lines = content.split("\n");
+        let count = 0;
 
-            if (values.length > 1) {
-              const studentData: Student = {
-                id: values[0],
-                choices: [],
-              };
+        for (const line of lines) {
+          if (!line.trim()) continue;
+          const values = line.split(",").map((v) => v.trim());
+          if (values.length < 3) continue;
 
-              for (let i = 1; i < values.length; i += 2) {
-                if (values[i] && values[i + 1]) {
-                  studentData.choices.push({
-                    choice_number: studentData.choices.length + 1,
-                    department: values[i],
-                    result: values[i + 1],
-                  });
-                }
-              }
-
-              await addDoc(collection(db, "results"), studentData);
-              count++;
+          const studentData: Student = { id: values[0], choices: [] };
+          for (let i = 1; i < values.length; i += 2) {
+            if (values[i] && values[i + 1]) {
+              studentData.choices.push({
+                choice_number: studentData.choices.length + 1,
+                department: values[i],
+                result: values[i + 1],
+              });
             }
           }
 
-          alert(`File uploaded successfully! ${count} records saved to Firebase`);
-        } else {
-          alert("Only CSV files are supported");
+          // Save each student doc in Firestore (doc ID = roll)
+          await setDoc(doc(db, "results", studentData.id), studentData);
+          count++;
         }
+
+        alert(`File uploaded successfully! ${count} records saved.`);
       } catch (err) {
-        setError("Error reading file");
+        console.error(err);
+        setError("Error reading file or saving to Firestore");
       }
     };
 
     reader.readAsText(file);
   };
 
-  // 🔹 Roll দিয়ে Firestore থেকে Search
+  // 🔹 Roll Search → Firestore
   const handleSearch = async () => {
     if (!roll) {
       setError("Please enter a roll number");
@@ -107,17 +99,17 @@ export default function SearchCard() {
     setResult(null);
 
     try {
-      const q = query(collection(db, "results"), where("id", "==", roll));
-      const querySnapshot = await getDocs(q);
+      const docRef = doc(db, "results", roll);
+      const docSnap = await getDoc(docRef);
 
-      if (!querySnapshot.empty) {
-        const data = querySnapshot.docs[0].data() as Student;
-        setResult(data);
+      if (docSnap.exists()) {
+        setResult(docSnap.data() as Student);
       } else {
         setError("No result found for this roll number");
       }
-    } catch {
-      setError("Search error");
+    } catch (err) {
+      console.error(err);
+      setError("Search failed");
     } finally {
       setLoading(false);
     }

@@ -1,14 +1,15 @@
-// firebaseConfig.ts
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDmu-SRy-95uGP1wdnJ2fkxSdASE6OhP5Q",
-  authDomain: "results-bed59.firebaseapp.com",
-  projectId: "results-bed59",
-  storageBucket: "results-bed59.firebasestorage.app",
-  messagingSenderId: "655986710611",
-  appId: "1:655986710611:web:eb8df0db8e6412342a4ea6",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
