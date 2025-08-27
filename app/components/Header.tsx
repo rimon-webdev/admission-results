@@ -7,16 +7,17 @@ export default function Header() {
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* লোগো */}
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center">
             <span className="text-white font-bold text-lg">QED</span>
           </div>
         </div>
-        
+
         <div className="flex items-center gap-2">
-          <Link 
-            href="https://qedlearning.com/" 
+          {/* সব স্ক্রিনে button দেখাবে */}
+          <Link
+            href="https://qedlearning.com/"
             target="_blank"
-            className="hidden sm:inline-flex text-sm font-medium px-4 py-2 rounded-md bg-red-600 text-white hover:bg-red-700 transition-colors"
+            className="text-sm font-medium px-4 py-2 rounded-md bg-red-600 text-white hover:bg-red-700 transition-colors"
           >
             Visit Main Site
           </Link>
