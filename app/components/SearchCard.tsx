@@ -107,23 +107,34 @@ export default function SearchCard() {
     setError(null);
     setResult(null);
 
-    try {
-      if (fileData.length > 0) {
-        const foundResult = fileData.find((item) => item.id === roll);
-        if (foundResult) {
-          setResult(foundResult);
-        } else {
-          setError("No result found for this roll number");
-        }
-      } else {
-        setError("No result data available. Please upload a result file first.");
-      }
-    } catch (err) {
-      setError("Search error: " + err);
-    } finally {
-      setLoading(false);
+   interface Choice {
+  choice_number: number;
+  department: string;
+  result: string;
+}
+
+interface Student {
+  id: string;
+  choices: Choice[];
+}
+
+try {
+  if (fileData.length > 0) {
+    const foundResult = fileData.find((item: Student) => item.id === roll);
+    if (foundResult) {
+      setResult(foundResult);
+    } else {
+      setError("No result found for this roll number");
     }
-  };
+  } else {
+    setError("No result data available. Please upload a result file first.");
+  }
+} catch {
+  setError("Search error");
+} finally {
+  setLoading(false);
+}
+
 
   // Badge color
   const getResultBadge = (result: string) => {
