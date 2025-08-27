@@ -1,0 +1,454 @@
+
+// [
+//   {
+//     "id": "10003",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 4, "department": "ENG", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10007",
+//     "choices": [
+//       { "choice_number": 1, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "BICHEM", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "CSE", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10008",
+//     "choices": [
+//       { "choice_number": 1, "department": "BBA", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "ENG", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "MCJ", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10010",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 3, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "CEE", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10012",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "BBA", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ECO", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10015",
+//     "choices": [
+//       { "choice_number": 1, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CEE", "result": "SORRY" },
+//       { "choice_number": 4, "department": "CSE", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10016",
+//     "choices": [
+//       { "choice_number": 1, "department": "BICHEM", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "MIC", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 4, "department": "CEE", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10017",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 3, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "BBA", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10018",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10019",
+//     "choices": [
+//       { "choice_number": 1, "department": "CEE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "ARCH", "result": "ACCEPTED*" },
+//       { "choice_number": 3, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 4, "department": "EEE", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10020",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "ECO", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "EEE", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10021",
+//     "choices": [
+//       { "choice_number": 1, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 4, "department": "CSE", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10022",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ENV SCI", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10023",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 2, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "CSE", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10026",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "BICHEM", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10027",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 2, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 3, "department": "BICHEM", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "MIC", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10028",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10030",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "ACCEPTED*" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED*" },
+//       { "choice_number": 3, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 4, "department": "ENV SCI", "result": "ACCEPTED*" }
+//     ]
+//   },
+//   {
+//     "id": "10032",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 2, "department": "CEE", "result": "SORRY" },
+//       { "choice_number": 3, "department": "BBA", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "BICHEM", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10035",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "CEE", "result": "ACCEPTED" }
+//     ]
+//   },
+ 
+//   {
+//     "id": "10038",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10039",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "BBA", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10040",
+//     "choices": [
+//       { "choice_number": 1, "department": "BBA", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "BICHEM", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 4, "department": "ENG", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10041",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10042",
+//     "choices": [
+//       { "choice_number": 1, "department": "ENV SCI", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "BICHEM", "result": "SORRY" },
+//       { "choice_number": 3, "department": "BBA", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10045",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 2, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "MCJ", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "CSE", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10046",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10049",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 3, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 4, "department": "CEE", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10051",
+//     "choices": [
+//       { "choice_number": 1, "department": "BBA", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 3, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 4, "department": "ENG", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10052",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 3, "department": "BBA", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ENG", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10055",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 4, "department": "ENG", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10057",
+//     "choices": [
+//       { "choice_number": 1, "department": "ENG", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "MIC", "result": "SORRY" },
+//       { "choice_number": 3, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 4, "department": "CSE", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10059",
+//     "choices": [
+//       { "choice_number": 1, "department": "BBA", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "ECO", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10061",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 4, "department": "BICHEM", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10063",
+//     "choices": [
+//       { "choice_number": 1, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 3, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "CEE", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10064",
+//     "choices": [
+//       { "choice_number": 1, "department": "BBA", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10065",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10067",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 4, "department": "CEE", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10068",
+//     "choices": [
+//       { "choice_number": 1, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 4, "department": "BICHEM", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10070",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10071",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 4, "department": "CEE", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10072",
+//     "choices": [
+//       { "choice_number": 1, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 3, "department": "BICHEM", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "CSE", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10073",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 4, "department": "CEE", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10074",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "CEE", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10075",
+//     "choices": [
+//       { "choice_number": 1, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 2, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "EEE", "result": "SORRY" }
+//     ]
+//   },
+//   {
+//     "id": "10076",
+//     "choices": [
+//       { "choice_number": 1, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "ARCH", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "BBA", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10078",
+//     "choices": [
+//       { "choice_number": 1, "department": "ENG", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "MCJ", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "ENV MGT", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10080",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 3, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 4, "department": "BBA", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10081",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "SORRY" },
+//       { "choice_number": 2, "department": "EEE", "result": "SORRY" },
+//       { "choice_number": 3, "department": "ARCH", "result": "SORRY" },
+//       { "choice_number": 4, "department": "BBA", "result": "ACCEPTED" }
+//     ]
+//   },
+//   {
+//     "id": "10082",
+//     "choices": [
+//       { "choice_number": 1, "department": "CSE", "result": "ACCEPTED" },
+//       { "choice_number": 2, "department": "EEE", "result": "ACCEPTED" },
+//       { "choice_number": 3, "department": "CEE", "result": "ACCEPTED" },
+//       { "choice_number": 4, "department": "ARCH", "result": "SORRY" }
+//     ]
+//   }
+// ]
