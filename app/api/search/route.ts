@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // Import your JSON data (you'll need to place your data in a file)
-import data from '@/app/data/results.json';
+
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
